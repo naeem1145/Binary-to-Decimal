@@ -1,33 +1,25 @@
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+//Binary to decimal
 
-# Precompiled Headers
-*.gch
-*.pch
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+int main()
+{
+    char binary[5];
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+    int power, decimal = 0, len;
+    int i, j;
+    printf("Enter the binary number: ");
+    scanf("%s", binary);
+    len = strlen(binary);
+    power = len - 1;
+    for(i = 0; i < len; i++){
+        decimal = decimal + (binary[i] - '0') * pow(2, power);
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+        power--;
+    }
+    printf("Decimal value is %d\n", decimal);
+    return 0;
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
+}
+// Decimal to Binary
